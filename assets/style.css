@@ -71,6 +71,15 @@ a { color: inherit; }
   font-size: clamp(1.18rem, 2vw, 1.52rem);
   line-height: 1.58;
 }
+.ai-note {
+  max-width: 650px;
+  margin: 24px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.6;
+}
 
 .notes { padding-bottom: 110px; }
 .section-heading {
