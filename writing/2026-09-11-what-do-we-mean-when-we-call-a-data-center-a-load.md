@@ -1,43 +1,17 @@
-# What Do We Mean When We Call a Data Center a Load?
+# AI Data Centers Are More Than Just Bigger Loads
 
 *September 11, 2026*
 
-None of the ideas in this note are particularly new. What is new, at least to me, is how differently I started thinking about electricity demand after trying to model it.
+Most discussions about AI data centers and electricity start with the same question: how much more power will AI need? That is obviously important. Data centers are getting larger, new facilities are being built quickly, and utilities have to plan for substantial new demand. But after working on this topic for a while, I have started to think that the size of the demand is only part of the story. The other question is what kind of demand AI creates.
 
-I used to think the most interesting question about AI data centers and electricity was mostly about scale.
+A data center uses electricity to run computation, and not all computation has the same requirements. Some jobs need to run immediately, while others may be delayed; some interruptions are extremely costly, while others may be manageable. From the grid’s point of view, this means that two data centers with the same total electricity consumption could behave very differently depending on when their demand appears, how flexible it is, and how much reliability they actually need.
 
-They use a lot of power. They are growing quickly. Utilities have to build around them. The natural questions seem quantitative: how many gigawatts, how fast, and where?
+This matters because electricity markets do not only have to serve a certain number of megawatt-hours. They also have to deal with when demand occurs, how responsive it is to system conditions, and what level of reliability different consumers are willing to pay for. So the AI electricity problem may not simply be about building enough generation and transmission to accommodate higher load growth. It may also be about how the power system should serve a new class of very large consumers whose demand is tied to the structure of computation.
 
-But while working on related research, I kept running into something that made the usual picture feel incomplete. A data center may appear in an electricity model as a load, but the thing behind that load is computation. And computation has its own structure.
+This distinction became much clearer to me while trying to model data-center electricity demand. Assumptions that initially looked like technical details—whether some demand can move in time, how costly interruption is, or whether curtailed work simply disappears or has to be completed later—can change the economic problem quite substantially. I originally thought of these mainly as modeling choices, but I now think they point to something broader: how we represent a data center depends on what we think the underlying economic object actually is.
 
-Some work has to happen now. Some can happen later. Some is valuable enough that interruption is extremely costly. Other work may be movable in time or across machines. The same amount of electricity consumption can therefore represent very different obligations.
+Electricity demand is often treated as relatively passive. Consumers need power, and the system has to provide it. Large computational loads make that picture less straightforward because the value of electricity may depend on the type of computation taking place at a particular moment. Some workloads may be highly time-sensitive, while others may have much more flexibility. As a result, the same amount of electricity demand can have very different implications for reliability planning, market design, and the way utilities structure service.
 
-That sounds like a technical detail. I initially treated it as one.
+None of this means that flexible demand is new. Industrial consumers, interruptible service, and demand-response programs have existed for a long time. What seems different is the scale at which AI data centers may bring these questions back into the center of power-system planning. If AI changes not only the **quantity** of electricity demand but also the **structure** of demand, then electricity markets may need to respond to more than just higher load growth.
 
-I am starting to think it is closer to the main question.
-
-The word *load* is useful because it compresses a complicated object into a number the power system can work with. But compression hides things. Two facilities that consume the same number of megawatt-hours may respond very differently to scarcity, prices, reliability incentives, or constraints on the grid. Looking only at total consumption can make those differences disappear.
-
-This has changed the way I think about the usual supply-and-demand picture of electricity markets. We often draw demand as the passive side of the system: electricity is needed, and generators, networks, and markets figure out how to serve it.
-
-Large computational loads make that story less clean.
-
-A data center is certainly a customer. But depending on how its computing needs are organized, it may also have choices about when electricity is most valuable, what kind of reliability it is willing to pay for, and how much its demand can respond to conditions on the system.
-
-None of this means that data centers are unique. Industrial loads have been flexible for a long time, and demand response is hardly a new idea. What I find interesting is that AI infrastructure brings these questions back at an unusual scale and with a new object sitting behind electricity demand: computation.
-
-That makes me more cautious about statements like “AI will require X amount of electricity.” The number matters. But it does not tell us everything we would want to know about the interaction between AI infrastructure and the grid.
-
-The harder questions are about the shape of that demand: when it appears, how rigid it is, how reliability is valued, and how those characteristics interact with the rules and incentives of electricity markets.
-
-Working on this topic has made me realize that modeling choices sometimes reveal conceptual choices. Deciding how to represent a data center is not just a mathematical convenience. It forces you to decide what you think the economic object actually is.
-
-I do not have a clean answer yet.
-
-But I now find myself less interested in asking only:
-
-**How much electricity will AI consume?**
-
-and more interested in asking:
-
-**What do we mean when we call an AI data center a load?**
+That could matter for how utilities design tariffs and contracts, how planners evaluate reliability needs, and how the power system values different forms of flexibility. So when I see forecasts saying that AI will require some enormous number of gigawatts, I still think the number matters. But I also want to know when that electricity needs to be available, how reliable it needs to be, and how much of the demand can actually respond when the grid is under stress. Those questions may turn out to matter just as much as the total amount of electricity AI consumes.
